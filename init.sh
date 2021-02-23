@@ -1,0 +1,1 @@
+echo ' Laravel Alpine Nginx'
