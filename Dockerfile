@@ -107,6 +107,7 @@ RUN echo '*  *  *  *  * /usr/local/bin/php  /var/www/artisan schedule:run >> /de
 
 #  Add supervisor configuation file
 ADD master.ini /etc/supervisor.d/
+RUN chmod 600 /var/spool/cron/crontabs/root
 
 #  Add nginx configuation file
 
