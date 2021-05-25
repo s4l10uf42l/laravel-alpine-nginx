@@ -55,7 +55,7 @@ RUN apk add --no-cache php \
     php-tokenizer \
     php7-pecl-redis \
     php-bz2 \
-    php-exif \
+    php7-exif \
     php-intl \
     php-bcmath \
     php-opcache \
@@ -63,7 +63,9 @@ RUN apk add --no-cache php \
     php-zip
 
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+RUN docker-php-ext-install mysqli pdo pdo_mysql exif
+
+RUN docker-php-ext-enable exif 
 
 # Install and configure gd
 
