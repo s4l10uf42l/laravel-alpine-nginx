@@ -62,6 +62,7 @@ RUN apk add --no-cache php \
     php-calendar \
     php-zip
 
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Install and configure gd
 
@@ -70,7 +71,7 @@ docker-php-ext-configure gd \
     --with-gd \
     --with-freetype-dir=/usr/include/ \
     --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd pdo_mysql
+    && docker-php-ext-install -j$(nproc) gd 
 
 #docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr
 
